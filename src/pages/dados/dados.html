@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="padrao">
+    <ion-title text-center>
+      WHOQOL-Brief
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Sobrenome</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Idade</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <div text-center>
+    <button ion-button icon-right color="padrao" (click)="avancar()">
+      Avançar
+      <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+  </div>
+</ion-content>

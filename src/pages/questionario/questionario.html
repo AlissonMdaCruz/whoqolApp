@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="padrao">
+    <ion-title text-center>
+      WHOQOL-Brief
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides (ionSlideDidChange)="slideChanged()">
+    <ion-slide *ngFor="let pergunta of perguntas; let i = index">
+      <ion-list radio-group [(ngModel)]="valor[i]">
+        <h1>{{ pergunta.questao }}</h1>
+        <ion-item *ngFor="let alternativa of pergunta.respostas; let j = index">
+          <ion-label>{{ alternativa }}</ion-label>
+          <ion-radio [value]="j"></ion-radio>
+        </ion-item>
+      </ion-list>
+      <button ion-button *ngIf="!final" (click)="next()">Next</button>
+      <button ion-button *ngIf="final" (click)="finalizar()">Finalizar</button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
