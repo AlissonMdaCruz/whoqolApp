@@ -10,6 +10,7 @@ import { InstrucoesPageModule } from '../pages/instrucoes/instrucoes.module';
 import { QuestionarioPageModule } from '../pages/questionario/questionario.module';
 import { DadosPageModule } from '../pages/dados/dados.module';
 import { TermosPageModule } from '../pages/termos/termos.module';
+import { FinalPageModule } from '../pages/final/final.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TermosPageModule } from '../pages/termos/termos.module';
     QuestionarioPageModule,
     TermosPageModule,
     DadosPageModule,
+    FinalPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

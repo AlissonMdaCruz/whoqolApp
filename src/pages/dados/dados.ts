@@ -8,16 +8,13 @@ import { QuestionarioPage } from '../questionario/questionario';
   templateUrl: 'dados.html',
 })
 export class DadosPage {
+  info: any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DadosPage');
-  }
-
   avancar(){
-    this.navCtrl.setRoot(QuestionarioPage);
+    this.navCtrl.setRoot(QuestionarioPage, {'info': this.info});
   }
 
 }

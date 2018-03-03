@@ -7,28 +7,31 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
+  <div class="pica">
+    <h1 text-center>Informações Básicas</h1>
+    <form (ngSubmit)="avancar()">
 
-    <ion-item>
-      <ion-label floating>Nome</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label stacked>Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="info.nome" name="nome"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label floating>Sobrenome</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label stacked>Sobrenome</ion-label>
+        <ion-input type="text" [(ngModel)]="info.sobrenome" name="sobrenome"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label floating>Idade</ion-label>
-      <ion-input type="number"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label stacked>Profissão</ion-label>
+        <ion-input type="text" [(ngModel)]="info.profissao" name="profissao"></ion-input>
+      </ion-item>
 
-  </ion-list>
-  <div text-center>
-    <button ion-button icon-right color="padrao" (click)="avancar()">
-      Avançar
-      <ion-icon name="arrow-forward"></ion-icon>
-    </button>
+      <div text-center>
+        <button ion-button type="submit" icon-right color="padrao">
+          Avançar
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </div>
+    </form>
   </div>
 </ion-content>

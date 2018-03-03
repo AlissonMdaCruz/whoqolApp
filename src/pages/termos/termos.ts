@@ -12,10 +12,6 @@ export class TermosPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TermosPage');
-  }
-
   avancar(){
     this.navCtrl.setRoot(DadosPage);
   }

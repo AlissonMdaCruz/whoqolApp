@@ -10,14 +10,15 @@
   <ion-slides (ionSlideDidChange)="slideChanged()">
     <ion-slide *ngFor="let pergunta of perguntas; let i = index">
       <ion-list radio-group [(ngModel)]="valor[i]">
+        <span>{{ pergunta.info }}</span>
         <h1>{{ pergunta.questao }}</h1>
         <ion-item *ngFor="let alternativa of pergunta.respostas; let j = index">
           <ion-label>{{ alternativa }}</ion-label>
           <ion-radio [value]="j"></ion-radio>
         </ion-item>
       </ion-list>
-      <button ion-button *ngIf="!final" (click)="next()">Next</button>
-      <button ion-button *ngIf="final" (click)="finalizar()">Finalizar</button>
+      <button ion-button color="padrao" *ngIf="!final" (click)="next()">Next</button>
+      <button ion-button color="padrao" *ngIf="final" (click)="finalizar()">Next</button>
     </ion-slide>
   </ion-slides>
 </ion-content>

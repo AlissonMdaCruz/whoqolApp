@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="padrao">
+    <ion-title text-center>
+      WHOQOL-Brief
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="pica">
+    <h1 text-center>Considerações Finais</h1>
+    <form (ngSubmit)="finalizar()">
+
+      <p>Alguém lhe ajudou a preencher este questionário?</p>
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="consideracoes.ajuda" name="ajuda"></ion-input>
+      </ion-item>
+
+      <p>Quanto tempo você levou para preencher este questionário?</p>
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="consideracoes.tempo" name="tempo"></ion-input>
+      </ion-item>
+
+      <div text-center>
+        <button ion-button icon-right color="padrao" type="submit">
+          Finalizar
+          <ion-icon name="arrow-dropright"></ion-icon>
+        </button>
+      </div>
+
+    </form>
+  </div>
+</ion-content>

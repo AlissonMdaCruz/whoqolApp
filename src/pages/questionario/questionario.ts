@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 
 import questions from '../../model/questoes';
-import { HomePage } from '../home/home';
+import { FinalPage } from '../final/final';
 
 @IonicPage()
 @Component({
@@ -15,9 +15,11 @@ export class QuestionarioPage {
   perguntas: any[] = questions;
   valor: any[];
   final: boolean = false;
+  info: any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.iniciarValores();
+    this.info = this.navParams.get('info');
   }
 
   ionViewDidLoad() {
@@ -38,7 +40,7 @@ export class QuestionarioPage {
   }
 
   finalizar() {
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(FinalPage, { 'info': this.info, 'resp': this.valor });
   }
 
   slideChanged() {

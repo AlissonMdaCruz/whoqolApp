@@ -11,10 +11,6 @@ export class InstrucoesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad InstrucoesPage');
-  }
-
   avancar(){
     this.navCtrl.push(TermosPage);
   }
