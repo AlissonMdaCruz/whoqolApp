@@ -12,12 +12,18 @@ import { DadosPageModule } from '../pages/dados/dados.module';
 import { TermosPageModule } from '../pages/termos/termos.module';
 import { FinalPageModule } from '../pages/final/final.module';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { credentials } from '../config';
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage
   ],
   imports: [
+    AngularFireModule.initializeApp(credentials.firebase),
+    AngularFirestoreModule,
     BrowserModule,
     InstrucoesPageModule,
     QuestionarioPageModule,
