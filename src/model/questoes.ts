@@ -13,16 +13,16 @@ const questions: any = [{
   "questao": "3.Em que medida você acha que sua dor(física) impede você de fazer o que você precisa?",
   "respostas": ["Nada", "Muito Pouco", "Mais ou Menos", "Bastante", "Extremamente"]
 },
-// {
-//   "info": "",
-//   "questao": "4.O quanto você precisa de algum tratamento médico para levar sua vida diária?",
-//   "respostas": ["Nada", "Muito Pouco", "Mais ou Menos", "Bastante", "Extremamente"]
-// },
-// {
-//   "info": "",
-//   "questao": "5.O quanto você aproveita a vida?",
-//   "respostas": ["Nada", "Muito Pouco", "Mais ou Menos", "Bastante", "Extremamente"]
-// },
+{
+  "info": "",
+  "questao": "4.O quanto você precisa de algum tratamento médico para levar sua vida diária?",
+  "respostas": ["Nada", "Muito Pouco", "Mais ou Menos", "Bastante", "Extremamente"]
+},
+{
+  "info": "",
+  "questao": "5.O quanto você aproveita a vida?",
+  "respostas": ["Nada", "Muito Pouco", "Mais ou Menos", "Bastante", "Extremamente"]
+},
 // {
 //   "info": "",
 //   "questao": "6.Em que medida você acha que a sua vida tem sentido?",

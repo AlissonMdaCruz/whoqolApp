@@ -14,7 +14,7 @@
         <h1>{{ pergunta.questao }}</h1>
         <ion-item *ngFor="let alternativa of pergunta.respostas; let j = index">
           <ion-label>{{ alternativa }}</ion-label>
-          <ion-radio [value]="j"></ion-radio>
+          <ion-radio [value]="j+1"></ion-radio>
         </ion-item>
       </ion-list>
       <button ion-button color="padrao" *ngIf="!final" (click)="next()">Next</button>

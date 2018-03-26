@@ -1,3 +1,4 @@
+import { DadosModel } from './../../model/dados.model';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
@@ -14,7 +15,7 @@ import Pesquisa from '../../model/pesquisa';
 export class FinalPage {
 
   respostas: any[];
-  info: any = {};
+  dados: DadosModel;
   consideracoes: any = {};
   pesquisaCollection: AngularFirestoreCollection<Pesquisa>;
   pesquisa: Observable<Pesquisa[]>;
@@ -31,7 +32,13 @@ export class FinalPage {
     this.pesquisa = this.pesquisaCollection.valueChanges();
 
     this.respostas = this.navParams.get('resp');
-    this.info = this.navParams.get('info');
+    this.dados = this.navParams.get('dados');
+    this.inverter(this.respostas);
+  }
+  //Inverte as questões 3, 4 e 26
+  inverter(arr: Array<number>){
+    arr[2] = 6 - arr[2];
+    arr[3] = 6 - arr[3];
   }
 
   presentAlert(titulo: string, subtitulo: string) {
@@ -57,9 +64,11 @@ export class FinalPage {
     loading.present();
 
     this.pesquisaCollection.add({
-      'nome': this.info.nome,
-      'sobrenome': this.info.sobrenome,
-      'profissao': this.info.profissao,
+      'nome': this.dados.nome,
+      'sobrenome': this.dados.sobrenome,
+      'sexo': this.dados.sexo,
+      'idade': this.dados.idade,
+      'profissao': this.dados.profissao,
       'respostas': this.respostas,
       'ajuda': this.consideracoes.ajuda,
       'tempo': this.consideracoes.tempo

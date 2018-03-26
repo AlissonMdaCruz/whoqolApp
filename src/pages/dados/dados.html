@@ -7,27 +7,44 @@
 </ion-header>
 
 <ion-content padding>
-  <div class="pica">
+  <div class="dados">
     <h1 text-center>Informações Básicas</h1>
-    <form (ngSubmit)="avancar()">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
 
       <ion-item>
-        <ion-label stacked>Nome</ion-label>
-        <ion-input type="text" [(ngModel)]="info.nome" name="nome"></ion-input>
+        <ion-label stacked>* Nome</ion-label>
+        <ion-input type="text" ngModel name="nome" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>Sobrenome</ion-label>
-        <ion-input type="text" [(ngModel)]="info.sobrenome" name="sobrenome"></ion-input>
+        <ion-label stacked>* Sobrenome</ion-label>
+        <ion-input type="text" ngModel name="sobrenome" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>Profissão</ion-label>
-        <ion-input type="text" [(ngModel)]="info.profissao" name="profissao"></ion-input>
+        <ion-label stacked>* Sexo</ion-label>
+        <ion-select ngModel name="sexo" required>
+          <ion-option value="F">Feminino</ion-option>
+          <ion-option value="M">Masculino</ion-option>
+        </ion-select>
       </ion-item>
+
+      <ion-item>
+        <ion-label stacked>* Idade</ion-label>
+        <ion-select ngModel name="idade" required>
+          <ion-option *ngFor="let age of ages" value={{age}}>{{age}} anos</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>* Profissão</ion-label>
+        <ion-input type="text" ngModel name="profissao" required></ion-input>
+      </ion-item>
+      <div>(*)Campos Obrigatórios</div>
+      <!-- <div *ngIf="!nome.valid && nome.touched" >Obrigatorio</div> -->
 
       <div text-center>
-        <button ion-button type="submit" icon-right color="padrao">
+        <button ion-button type="submit" icon-right color="padrao" [disabled]="!f.valid">
           Avançar
           <ion-icon name="arrow-forward"></ion-icon>
         </button>

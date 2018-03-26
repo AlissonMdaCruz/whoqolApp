@@ -8,13 +8,16 @@ import { QuestionarioPage } from '../questionario/questionario';
   templateUrl: 'dados.html',
 })
 export class DadosPage {
-  info: any = {};
+  private ages: Array<number> = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    for (let i = 2; i <= 120; i++) {
+      this.ages.push(i);
+    }
   }
 
-  avancar(){
-    this.navCtrl.setRoot(QuestionarioPage, {'info': this.info});
+  onSubmit(form) {
+    this.navCtrl.setRoot(QuestionarioPage, { 'dados': form.value });
   }
 
 }

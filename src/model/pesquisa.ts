@@ -2,7 +2,9 @@ interface Pesquisa {
   nome: string;
   sobrenome: string;
   profissao: string;
-  respostas: Array<Number>;
+  sexo: string;
+  idade: number;
+  respostas: Array<number>;
   ajuda: string;
   tempo: string;
 }

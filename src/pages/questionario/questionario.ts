@@ -1,3 +1,4 @@
+import { DadosModel } from './../../model/dados.model';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 
@@ -15,11 +16,11 @@ export class QuestionarioPage {
   perguntas: any[] = questions;
   valor: any[];
   final: boolean = false;
-  info: any = {};
+  dados: DadosModel;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.iniciarValores();
-    this.info = this.navParams.get('info');
+    this.dados = this.navParams.get('dados');
   }
 
   ionViewDidLoad() {
@@ -40,7 +41,7 @@ export class QuestionarioPage {
   }
 
   finalizar() {
-    this.navCtrl.setRoot(FinalPage, { 'info': this.info, 'resp': this.valor });
+    this.navCtrl.setRoot(FinalPage, { 'dados': this.dados, 'resp': this.valor });
   }
 
   slideChanged() {
