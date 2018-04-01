@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 
 import { HomePage } from '../home/home';
 import Pesquisa from '../../model/pesquisa';
+import { ScoreModel } from '../../model/score.model';
 
 @IonicPage()
 @Component({
@@ -14,11 +15,12 @@ import Pesquisa from '../../model/pesquisa';
 })
 export class FinalPage {
 
-  respostas: any[];
-  dados: DadosModel;
-  consideracoes: any = {};
   pesquisaCollection: AngularFirestoreCollection<Pesquisa>;
   pesquisa: Observable<Pesquisa[]>;
+  respostas: number[];
+  dados: DadosModel;
+  consideracoes: any = {};
+  score: ScoreModel = new ScoreModel();
 
   constructor(
     public navCtrl: NavController,
@@ -33,12 +35,15 @@ export class FinalPage {
 
     this.respostas = this.navParams.get('resp');
     this.dados = this.navParams.get('dados');
-    this.inverter(this.respostas);
+    this.calcularScore(this.respostas);
   }
-  //Inverte as questões 3, 4 e 26
-  inverter(arr: Array<number>){
-    arr[2] = 6 - arr[2];
-    arr[3] = 6 - arr[3];
+  //calcula o resultado
+  calcularScore(ar: Array<number>) {
+    this.score.fisico = parseFloat((((((((6 - ar[2]) + (6 - ar[3]) + ar[9] + ar[14] + ar[15] + ar[16] + ar[17]) / 7) * 4) - 4) / 16) * 100).toFixed(1));
+    this.score.psicologico = parseFloat(((((((ar[4] + ar[5] + ar[6] + ar[10] + ar[18] + (6 - ar[25])) / 6) * 4) - 4) / 16) * 100).toFixed(1));
+    this.score.relacoesSociais = parseFloat(((((((ar[19] + ar[20] + ar[21]) / 3) * 4) - 4) / 16) * 100).toFixed(1));
+    this.score.meioAmbiente = parseFloat(((((((ar[7] + ar[8] + ar[11] + ar[12] + ar[13] + ar[22] + ar[23] + ar[24]) / 8) * 4) - 4) / 16) * 100).toFixed(1));
+    this.score.scoreFinal = parseFloat(((this.score.fisico + this.score.psicologico + this.score.relacoesSociais + this.score.meioAmbiente) / 4).toFixed(1));
   }
 
   presentAlert(titulo: string, subtitulo: string) {
@@ -71,11 +76,12 @@ export class FinalPage {
       'profissao': this.dados.profissao,
       'respostas': this.respostas,
       'ajuda': this.consideracoes.ajuda,
-      'tempo': this.consideracoes.tempo
-    }).then(()=>{
+      'tempo': this.consideracoes.tempo,
+      'score': this.score
+    }).then(() => {
       loading.dismiss();
       this.presentAlert('Fim do Questionário', 'Agradecemos pela sua participação');
-    }).catch((err)=>{
+    }).catch((err) => {
       console.log(err);
       loading.dismiss();
       this.presentAlert('Erro', 'Erro no envio do questionario');

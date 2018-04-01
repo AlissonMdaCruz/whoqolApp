@@ -1,3 +1,4 @@
+import { ScoreModel } from './score.model';
 interface Pesquisa {
   nome: string;
   sobrenome: string;
@@ -7,6 +8,7 @@ interface Pesquisa {
   respostas: Array<number>;
   ajuda: string;
   tempo: string;
+  score: ScoreModel;
 }
 
 export default Pesquisa;
