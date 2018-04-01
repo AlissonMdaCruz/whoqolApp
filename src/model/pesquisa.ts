@@ -5,6 +5,7 @@ interface Pesquisa {
   profissao: string;
   sexo: string;
   idade: number;
+  email: string;
   respostas: Array<number>;
   ajuda: string;
   tempo: string;

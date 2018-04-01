@@ -4,4 +4,5 @@ export interface DadosModel {
   profissao: string;
   sexo: string;
   idade: number;
+  email: string;
 }

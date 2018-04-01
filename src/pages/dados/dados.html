@@ -12,17 +12,17 @@
     <form #f="ngForm" (ngSubmit)="onSubmit(f)">
 
       <ion-item>
-        <ion-label stacked>* Nome</ion-label>
+        <ion-label stacked>Nome *</ion-label>
         <ion-input type="text" ngModel name="nome" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>* Sobrenome</ion-label>
+        <ion-label stacked>Sobrenome *</ion-label>
         <ion-input type="text" ngModel name="sobrenome" required></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>* Sexo</ion-label>
+        <ion-label stacked>Sexo *</ion-label>
         <ion-select ngModel name="sexo" required>
           <ion-option value="F">Feminino</ion-option>
           <ion-option value="M">Masculino</ion-option>
@@ -30,16 +30,22 @@
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>* Idade</ion-label>
+        <ion-label stacked>Idade *</ion-label>
         <ion-select ngModel name="idade" required>
           <ion-option *ngFor="let age of ages" value={{age}}>{{age}} anos</ion-option>
         </ion-select>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>* Profissão</ion-label>
+        <ion-label stacked>Profissão *</ion-label>
         <ion-input type="text" ngModel name="profissao" required></ion-input>
       </ion-item>
+
+      <ion-item>
+          <ion-label stacked>E-mail *</ion-label>
+          <ion-input type="text" ngModel name="email" required></ion-input>
+      </ion-item>
+
       <div>(*)Campos Obrigatórios</div>
       <!-- <div *ngIf="!nome.valid && nome.touched" >Obrigatorio</div> -->
 

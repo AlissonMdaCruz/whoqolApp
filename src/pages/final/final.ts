@@ -74,6 +74,7 @@ export class FinalPage {
       'sexo': this.dados.sexo,
       'idade': this.dados.idade,
       'profissao': this.dados.profissao,
+      'email':this.dados.email,
       'respostas': this.respostas,
       'ajuda': this.consideracoes.ajuda,
       'tempo': this.consideracoes.tempo,
