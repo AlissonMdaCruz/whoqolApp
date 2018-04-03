@@ -81,7 +81,11 @@ export class FinalPage {
       'respostas': this.respostas,
       'ajuda': this.consideracoes.ajuda,
       'tempo': this.consideracoes.tempo,
-      'score': this.score
+      'domFisico': this.score.fisico,
+      'domPsico': this.score.psicologico,
+      'domRelSoc': this.score.relacoesSociais,
+      'domMeioAmb': this.score.meioAmbiente,
+      'score': this.score.scoreFinal
     }).then(() => {
       loading.dismiss();
       this.presentAlert('Fim do Questionário', 'Agradecemos pela sua participação');
