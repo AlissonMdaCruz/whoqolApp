@@ -5,4 +5,7 @@ export interface DadosModel {
   sexo: string;
   idade: number;
   email: string;
+  escolaridade: string;
+  formacao: string;
+  estadoCivil: string;
 }

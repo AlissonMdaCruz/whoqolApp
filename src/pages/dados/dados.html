@@ -37,6 +37,28 @@
       </ion-item>
 
       <ion-item>
+        <ion-label stacked>Estado Cívil *</ion-label>
+        <ion-select ngModel name="estadoCivil" required>
+          <ion-option value="Solteiro(a)">Solteiro(a)</ion-option>
+          <ion-option value="Casado(a)">Casado(a)</ion-option>
+          <ion-option value="Divorciado(a)">Divorciado(a)</ion-option>
+          <ion-option value="Viuvo(a)">Viúvo(a)</ion-option>
+          <ion-option value="Separado(a)">Separado(a)</ion-option>
+          <ion-option value="Uniao Estavel">União Estável</ion-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label stacked>Escolaridade *</ion-label>
+        <ion-input type="text" ngModel name="escolaridade" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Formação Acadêmica *</ion-label>
+        <ion-input type="text" ngModel name="formacao" required></ion-input>
+      </ion-item>
+
+      <ion-item>
         <ion-label stacked>Profissão *</ion-label>
         <ion-input type="text" ngModel name="profissao" required></ion-input>
       </ion-item>
