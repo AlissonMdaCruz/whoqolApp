@@ -33,11 +33,9 @@ export class QuestionarioPage {
   }
 
   next() {
-    if (this.valor[this.slides.getActiveIndex()] !== null) {
-      this.slides.lockSwipeToNext(false);
-      this.slides.slideNext(500, true);
-      this.slides.lockSwipeToNext(true);
-    }
+    this.slides.lockSwipeToNext(false);
+    this.slides.slideNext(500, true);
+    this.slides.lockSwipeToNext(true);
   }
 
   finalizar() {

@@ -8,17 +8,12 @@
 
 <ion-content padding>
   <div class="dados">
-    <h1 text-center>Informações Básicas</h1>
+    <h1 text-center>Informações Pessoais</h1>
     <form #f="ngForm" (ngSubmit)="onSubmit(f)">
 
       <ion-item>
-        <ion-label stacked>Nome *</ion-label>
+        <ion-label stacked>Nome Completo *</ion-label>
         <ion-input type="text" ngModel name="nome" required></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label stacked>Sobrenome *</ion-label>
-        <ion-input type="text" ngModel name="sobrenome" required></ion-input>
       </ion-item>
 
       <ion-item>
@@ -47,15 +42,23 @@
           <ion-option value="Uniao Estavel">União Estável</ion-option>
         </ion-select>
       </ion-item>
-      
-      <ion-item>
-        <ion-label stacked>Escolaridade *</ion-label>
-        <ion-input type="text" ngModel name="escolaridade" required></ion-input>
-      </ion-item>
 
       <ion-item>
-        <ion-label stacked>Formação Acadêmica *</ion-label>
-        <ion-input type="text" ngModel name="formacao" required></ion-input>
+        <ion-label stacked>Escolaridade *</ion-label>
+        <ion-select ngModel name="escolaridade" required>
+          <ion-option value="Fundamental Incompleto">Fundamental - Incompleto</ion-option>
+          <ion-option value="Fundamental Completo">Fundamental - Completo</ion-option>
+          <ion-option value="Medio Incompleto">Médio - Incompleto</ion-option>
+          <ion-option value="Medio Completo">Médio - Completo</ion-option>
+          <ion-option value="Superior Incompleto">Superior - Incompleto</ion-option>
+          <ion-option value="Superior Completo">Superior - Completo</ion-option>
+          <ion-option value="Pos-graduacao Lato Sensu Incompleto">Pós-graduação (Lato sensu) - Incompleto</ion-option>
+          <ion-option value="Pos-graduacao Lato Sensu Completo">Pós-graduação (Lato sensu) - Completo</ion-option>
+          <ion-option value="Pos-graduacao Stricto Sensu Mestrado Incompleto">Pós-graduação (Stricto sensu, nível mestrado) - Incompleto</ion-option>
+          <ion-option value="Pos-graduacao Stricto Sensu Mestrado Completo">Pós-graduação (Stricto sensu, nível mestrado) - Completo</ion-option>
+          <ion-option value="Pos-graduacao Stricto Sensu Doutor Incompleto">Pós-graduação (Stricto sensu, nível doutor) - Incompleto</ion-option>
+          <ion-option value="Pos-graduacao Stricto Sensu Doutor Completo">Pós-graduação (Stricto sensu, nível doutor) - Completo</ion-option>
+        </ion-select>
       </ion-item>
 
       <ion-item>
@@ -65,11 +68,10 @@
 
       <ion-item>
           <ion-label stacked>E-mail *</ion-label>
-          <ion-input type="email" ngModel name="email" required></ion-input>
+          <ion-input type="email" ngModel name="email" email required></ion-input>
       </ion-item>
 
       <div>(*)Campos Obrigatórios</div>
-      <!-- <div *ngIf="!nome.valid && nome.touched" >Obrigatorio</div> -->
 
       <div text-center>
         <button ion-button type="submit" icon-right color="padrao" [disabled]="!f.valid">

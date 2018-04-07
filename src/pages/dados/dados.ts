@@ -11,7 +11,7 @@ export class DadosPage {
   private ages: Array<number> = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    for (let i = 2; i <= 120; i++) {
+    for (let i = 15; i <= 100; i++) {
       this.ages.push(i);
     }
   }

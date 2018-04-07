@@ -17,8 +17,8 @@
           <ion-radio [value]="j+1"></ion-radio>
         </ion-item>
       </ion-list>
-      <button ion-button color="padrao" *ngIf="!final" (click)="next()">Next</button>
-      <button ion-button color="padrao" *ngIf="final" (click)="finalizar()">Next</button>
+      <button ion-button color="padrao" *ngIf="!final" (click)="next()" [disabled]="valor[i] == null">Next</button>
+      <button ion-button color="padrao" *ngIf="final" (click)="finalizar()" [disabled]="valor[i] == null">Next</button>
     </ion-slide>
   </ion-slides>
 </ion-content>
