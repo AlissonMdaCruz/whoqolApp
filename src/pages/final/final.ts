@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { HomePage } from '../home/home';
 import Pesquisa from '../../model/pesquisa';
 import { ScoreModel } from '../../model/score.model';
+import { ConsideracoesModel } from '../../model/cosideracoes.model';
 
 @IonicPage()
 @Component({
@@ -19,7 +20,7 @@ export class FinalPage {
   pesquisa: Observable<Pesquisa[]>;
   respostas: number[];
   dados: DadosModel;
-  consideracoes: any = {};
+  consideracoes: ConsideracoesModel = new ConsideracoesModel;
   score: ScoreModel = new ScoreModel();
 
   constructor(
@@ -48,8 +49,8 @@ export class FinalPage {
 
   presentAlert(titulo: string, subtitulo: string) {
     let alert = this.alertCtrl.create({
-      title: 'Fim do Questionário',
-      subTitle: 'Agradecemos pela sua participação',
+      title: titulo,
+      subTitle: subtitulo,
       buttons: [
         {
           text: 'Ok',
