@@ -68,10 +68,11 @@
 
       <ion-item>
           <ion-label stacked>E-mail *</ion-label>
-          <ion-input type="email" ngModel name="email" email required></ion-input>
+          <ion-input #em="ngModel" type="email" ngModel name="email" email required></ion-input>
       </ion-item>
 
       <div>(*)Campos Obrigatórios</div>
+      <div *ngIf="!em.valid && em.touched" class="aviso">Digite um email valido</div>
 
       <div text-center>
         <button ion-button type="submit" icon-right color="padrao" [disabled]="!f.valid">
