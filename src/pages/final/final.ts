@@ -70,21 +70,21 @@ export class FinalPage {
     loading.present();
 
     this.pesquisaCollection.add({
-      'nome': this.dados.nome,
-      'sexo': this.dados.sexo,
-      'idade': this.dados.idade,
-      'profissao': this.dados.profissao,
-      'escolaridade': this.dados.escolaridade,
-      'estadoCivil': this.dados.estadoCivil,
-      'email':this.dados.email,
-      'respostas': this.respostas,
-      'ajuda': this.consideracoes.ajuda,
-      'tempo': this.consideracoes.tempo,
-      'domFisico': this.score.fisico,
-      'domPsico': this.score.psicologico,
-      'domRelSoc': this.score.relacoesSociais,
-      'domMeioAmb': this.score.meioAmbiente,
-      'score': this.score.scoreFinal
+      '_01_nome': this.dados.nome,
+      '_02_idade': this.dados.idade,
+      '_03_sexo': this.dados.sexo,
+      '_04_estadoCivil': this.dados.estadoCivil,
+      '_05_escolaridade': this.dados.escolaridade,
+      '_06_profissao': this.dados.profissao,
+      '_07_email':this.dados.email,
+      '_08_respostas': this.respostas,
+      '_09_ajuda': this.consideracoes.ajuda,
+      '_10_tempo': this.consideracoes.tempo,
+      '_11_domFisico': this.score.fisico,
+      '_12_domPsico': this.score.psicologico,
+      '_13_domRelSoc': this.score.relacoesSociais,
+      '_14_domMeioAmb': this.score.meioAmbiente,
+      '_15_score': this.score.scoreFinal
     }).then(() => {
       loading.dismiss();
       this.presentAlert('Fim do Questionário', 'Agradecemos pela sua participação');
