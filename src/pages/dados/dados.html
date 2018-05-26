@@ -27,7 +27,7 @@
       <ion-item>
         <ion-label stacked>Idade *</ion-label>
         <ion-select ngModel name="idade" required>
-          <ion-option *ngFor="let age of ages" value={{age}}>{{age}} anos</ion-option>
+          <ion-option *ngFor="let age of ages" value={{age}}>{{age}}</ion-option>
         </ion-select>
       </ion-item>
 
@@ -63,7 +63,13 @@
 
       <ion-item>
         <ion-label stacked>Profissão *</ion-label>
-        <ion-input type="text" ngModel name="profissao" required></ion-input>
+        <ion-select ngModel name="profissao" required>
+          <ion-option value="Auxiliar de Limpeza">Auxiliar de Limpeza</ion-option>
+          <ion-option value="Estagiário(a)">Estagiário(a)</ion-option>
+          <ion-option value="Professor(a)">Professor(a)</ion-option>
+          <ion-option value="Técnico-Administrativo">Técnico-Administrativo</ion-option>
+          <ion-option value="Vigilante">Vigilante</ion-option>
+        </ion-select>
       </ion-item>
 
       <ion-item>

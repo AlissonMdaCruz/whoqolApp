@@ -3,7 +3,7 @@ export interface DadosModel {
   sobrenome: string;
   profissao: string;
   sexo: string;
-  idade: number;
+  idade: string;
   email: string;
   escolaridade: string;
   formacao: string;
